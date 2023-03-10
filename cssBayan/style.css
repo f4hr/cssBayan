@@ -2,3 +2,59 @@
 body {
   font-family: sans-serif;
 }
+
+.wrapper {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 4rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* Accordion */
+.accordion__item:not(:last-child) {
+  margin-bottom: 2rem;
+  border-bottom: 0.125rem solid #ebebeb;
+}
+
+.accordion-item {
+  overflow: hidden;
+  outline: none;
+}
+
+.accordion-item:focus .accordion-item__content,
+.accordion-item:hover .accordion-item__content {
+  max-height: 80vh;
+  opacity: 1;
+}
+
+.accordion-item__header {
+  margin-bottom: 2rem;
+}
+
+.accordion-item__title {
+  line-height: 1;
+  margin: 0;
+}
+
+.accordion-item__content {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  text-align: center;
+}
+
+.accordion-item__image {
+  max-width: 32rem;
+}
