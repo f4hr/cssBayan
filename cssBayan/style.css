@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 h1 {
@@ -30,19 +30,37 @@ img {
   overflow: hidden;
 }
 
-.accordion__item:not(:last-child) {
-  border-bottom: 0.125rem solid #ebebeb;
+.accordion:hover .accordion-item__icon {
+  opacity: 1;
+}
+
+.accordion:hover .accordion-item__title {
+  color: #333333;
 }
 
 .accordion-item {
   overflow: hidden;
   outline: none;
+  cursor: pointer;
+}
+
+.accordion__item:not(:last-child) {
+  border-bottom: 0.125rem solid #ebebeb;
 }
 
 .accordion-item:focus .accordion-item__content,
 .accordion-item:hover .accordion-item__content {
   max-height: 80vh;
   opacity: 1;
+}
+
+.accordion-item:active .accordion-item__title,
+.accordion-item:active .accordion-item__icon {
+  color: #008ba2;
+}
+
+.accordion-item:active .accordion-item__image {
+  opacity: 0.5;
 }
 
 .accordion-item__header {
@@ -53,18 +71,18 @@ img {
 }
 
 .accordion-item__title {
-  line-height: 1;
   margin: 0;
+  line-height: 1;
+  color: #008ba2;
+  transition: color 0.15s ease-in-out;
 }
 
 .accordion-item__icon {
   display: inline-block;
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url(images/chevron-down.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.15s ease-in-out;
 }
 
 .accordion-item:focus .accordion-item__icon,
@@ -83,4 +101,5 @@ img {
 
 .accordion-item__image {
   max-width: 32rem;
+  transition: opacity 0.3s ease-in-out;
 }
