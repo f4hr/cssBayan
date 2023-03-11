@@ -112,11 +112,11 @@ img {
 /* Mobile (from 0px to 767px) */
 @media (max-width: 48.98rem) {
   h1 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   .accordion-item__header {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .accordion-item__title {
@@ -127,7 +127,11 @@ img {
 /* Tablet (from 768px to 1023px) */
 @media (min-width: 48rem) and (max-width: 63.98rem) {
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  .accordion-item__header {
+    padding: 1.5rem;
   }
 
   .accordion-item__title {
@@ -135,17 +139,14 @@ img {
   }
 }
 
-/* Tablet (from 768px) */
-@media (min-width: 48rem) {
-  .accordion-item__header {
-    padding: 2rem;
-  }
-}
-
 /* Desktop (from 1024px) */
 @media (min-width: 64rem) {
   h1 {
-    font-size: 1.75rem;
+    font-size: 2rem;
+  }
+
+  .accordion-item__header {
+    padding: 2rem;
   }
 
   .accordion-item__title {
