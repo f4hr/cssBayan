@@ -34,18 +34,10 @@ img {
 
 /* Accordion */
 .accordion {
-  border: 1px solid #ebebeb;
-  background-color: #f2f2f2;
-  border-radius: 1rem;
   overflow: hidden;
-}
-
-.accordion:hover .accordion-item__icon {
-  opacity: 1;
-}
-
-.accordion:hover .accordion-item__title {
-  color: #333333;
+  border: 0.125rem solid #e1e1e1;
+  border-radius: 1rem;
+  background-color: #f2f2f2;
 }
 
 .accordion-item {
@@ -53,10 +45,9 @@ img {
 }
 
 .accordion__item:not(:last-child) {
-  border-bottom: 0.125rem solid #ebebeb;
+  border-bottom: 0.125rem solid #e1e1e1;
 }
 
-.accordion-item:hover .accordion-item__content,
 .accordion-item__input:checked + .accordion-item__label .accordion-item__content,
 .accordion-item__input:checked + .accordion-item__label .accordion-item__content {
   max-height: 80vh;
@@ -79,19 +70,16 @@ img {
 
 .accordion-item__label {
   display: block;
-  cursor: pointer;
 }
 
 .accordion-item__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
 }
 
 .accordion-item__title {
   margin: 0;
-  font-size: 1.5rem;
   font-weight: bold;
   line-height: 1;
   color: #008ba2;
@@ -102,16 +90,15 @@ img {
   display: inline-block;
   width: 1.5rem;
   height: 1.5rem;
-  opacity: 0;
   transition: transform 0.3s ease-in-out, opacity 0.15s ease-in-out;
 }
 
-.accordion-item__input:checked + .accordion-item__label .accordion-item__icon,
-.accordion-item:hover .accordion-item__icon {
+.accordion-item__input:checked + .accordion-item__label .accordion-item__icon {
   transform: rotateZ(180deg);
 }
 
 .accordion-item__content {
+  display: block;
   box-sizing: border-box;
   max-height: 0;
   text-align: center;
@@ -122,5 +109,78 @@ img {
 
 .accordion-item__image {
   max-width: 32rem;
+  width: 100%;
   transition: opacity 0.3s ease-in-out;
+}
+
+/* Mobile (from 0px to 767px) */
+@media (max-width: 48.98rem) {
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  .accordion-item__header {
+    padding: 1.5rem;
+  }
+
+  .accordion-item__title {
+    font-size: 1.125rem;
+  }
+}
+
+/* Tablet (from 768px to 1023px) */
+@media (min-width: 48rem) and (max-width: 63.98rem) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .accordion-item__title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Tablet (from 768px) */
+@media (min-width: 48rem) {
+  .accordion-item__header {
+    padding: 2rem;
+  }
+}
+
+/* Desktop (from 1024px) */
+@media (min-width: 64rem) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .accordion-item__title {
+    font-size: 1.5rem;
+  }
+}
+
+/* When hover is supported */
+@media (hover: hover) {
+  .accordion-item__label {
+    cursor: pointer;
+  }
+
+  .accordion-item__icon {
+    opacity: 0;
+  }
+
+  .accordion:hover .accordion-item__icon {
+    opacity: 1;
+  }
+
+  .accordion:hover .accordion-item__title {
+    color: #333333;
+  }
+
+  .accordion-item:hover .accordion-item__content {
+    max-height: 80vh;
+    opacity: 1;
+  }
+
+  .accordion-item:hover .accordion-item__icon {
+    transform: rotateZ(180deg);
+  }
 }
