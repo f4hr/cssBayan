@@ -23,8 +23,14 @@ img {
 }
 
 /* Accordion */
+.accordion {
+  border: 1px solid #ebebeb;
+  background-color: #f2f2f2;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
 .accordion__item:not(:last-child) {
-  margin-bottom: 2rem;
   border-bottom: 0.125rem solid #ebebeb;
 }
 
@@ -40,7 +46,10 @@ img {
 }
 
 .accordion-item__header {
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
 }
 
 .accordion-item__title {
@@ -48,11 +57,28 @@ img {
   margin: 0;
 }
 
+.accordion-item__icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url(images/chevron-down.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-item:focus .accordion-item__icon,
+.accordion-item:hover .accordion-item__icon {
+  transform: rotateZ(180deg);
+}
+
 .accordion-item__content {
+  box-sizing: border-box;
   max-height: 0;
+  text-align: center;
+  background-color: #ffffff;
   opacity: 0;
   transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
-  text-align: center;
 }
 
 .accordion-item__image {
