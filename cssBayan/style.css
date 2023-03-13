@@ -4,13 +4,15 @@ body {
 }
 
 .sr-only {
+  display: block;
+  width: 0.0125rem;
+  height: 0.0125rem;
+  margin: 0;
+  padding: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  height: 0.025rem;
   overflow: hidden;
-  position: absolute;
   white-space: nowrap;
-  width: 0.025rem;
 }
 
 .wrapper {
